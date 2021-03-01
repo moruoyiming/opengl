@@ -5,15 +5,16 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(GLEW_H /usr/local/Cellar/glew/2.1.0_1/include/GL)
 set(GLFW_H /usr/local/Cellar/glfw/3.3.2/include/GLFW)
+set(GLAD_H /Users/jian/Documents/project_c/opengl_lib/glad/include/glad)
 
-include_directories(${GLEW_H} ${GLFW_H})
+include_directories(${GLEW_H} ${GLFW_H} ${GLAD_H})
 
 set(GLEW_LINK /usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.dylib)
 set(GLFW_LINK /usr/local/Cellar/glfw/3.3.2/lib/libglfw.3.dylib)
 
 link_libraries(${GLEW_LINK} ${GLFW_LINK})
 
-add_executable(opengl main.cpp)
+add_executable(opengl main.cpp triangle.c square.c lines.c)
 # mac下这步很重要
 if (APPLE)
     target_link_libraries(opengl "-framework OpenGL")

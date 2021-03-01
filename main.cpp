@@ -10,7 +10,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     std::cout<<"ESC"<<mode;
 }
 
-int main(void) {
+int main2(void) {
     //初始化GLFW库
     if (!glfwInit())
         return -1;
